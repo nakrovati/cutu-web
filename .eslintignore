@@ -1,0 +1,9 @@
+# Node dependencies
+node_modules/
+
+# Nuxt dev/build outputs
+.output
+.nuxt
+
+# Coverage directory
+coverage

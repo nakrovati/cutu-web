@@ -1,0 +1,30 @@
+# Node dependencies
+node_modules/
+
+# Nuxt dev/build outputs
+.output
+.nuxt
+
+# Coverage directory
+coverage
+*.lcov
+
+# Logs
+logs
+*.log
+.pnpm-debug.log*
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# TypeScript cache
+*.tsbuildinfo
