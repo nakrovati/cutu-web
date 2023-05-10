@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// const route = useRoute();
-// const { backendURL } = useRuntimeConfig().public;
-
 definePageMeta({
   middleware: "check-short-url",
 });
