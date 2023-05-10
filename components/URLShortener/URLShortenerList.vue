@@ -12,7 +12,10 @@ const sortedShortLinksByDate = computed(() =>
 </script>
 
 <template>
-  <ul class="mt-8 flex flex-col gap-4 rounded-md bg-surface-1 p-4">
+  <ul
+    v-if="shortLinks.length"
+    class="mt-8 flex flex-col gap-4 rounded-lg bg-surface-1 p-4"
+  >
     <URLShortenerListItem
       v-for="shortLink in sortedShortLinksByDate"
       :key="shortLink.shortURL"
