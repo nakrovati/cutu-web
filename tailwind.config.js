@@ -23,5 +23,4 @@ export default {
       red: { 500: "#E63946", 700: "rgb(218 5 5)" },
     },
   },
-  plugins: [require("@savvywombat/tailwindcss-grid-areas")],
 };
