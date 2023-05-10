@@ -41,7 +41,7 @@ async function shortenURL() {
       dateCreated: new Date().toString(),
     };
 
-    const shortLink = await $fetch<ShortLink>("/url", {
+    const shortLink = await $fetch<ShortLink>("/urls", {
       method: "POST",
       baseURL: backendURL,
       body: newShortLink,
