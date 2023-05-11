@@ -3,7 +3,7 @@ export default defineNuxtRouteMiddleware(async (_to, from) => {
 
   const { backendURL } = useRuntimeConfig().public;
 
-  const shortLink = await $fetch<ShortLink>(`/url/${from.params.shortPath}`, {
+  const shortLink = await $fetch<ShortLink>(`/urls/${from.params.shortPath}`, {
     baseURL: backendURL,
     responseType: "json",
   });
