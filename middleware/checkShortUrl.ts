@@ -1,16 +1,30 @@
 export default defineNuxtRouteMiddleware(async (_to, from) => {
   if (process.client) return;
 
-  const { backendURL } = useRuntimeConfig().public;
+  const shortPath = from.params.shortPath.toString();
+  const shortPathRegex = /^\w{7}[+]?$/;
 
-  const shortLink = await $fetch<ShortLink>(`/urls/${from.params.shortPath}`, {
-    baseURL: backendURL,
-    responseType: "json",
-  });
-
-  if (!shortLink) {
-    abortNavigation();
+  if (!shortPathRegex.test(shortPath)) {
+    return abortNavigation();
   }
 
-  useShortLink().value = shortLink;
+  const { backendURL } = useRuntimeConfig().public;
+  const shortLink = useShortLink();
+
+  try {
+    const response = await $fetch<ShortLink>(
+      `/urls/${shortPath.substring(0, 7)}`,
+      {
+        baseURL: backendURL,
+      }
+    );
+
+    if (!response) {
+      return abortNavigation();
+    }
+
+    shortLink.value = response;
+  } catch (error) {
+    return abortNavigation();
+  }
 });

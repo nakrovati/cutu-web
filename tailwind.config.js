@@ -11,6 +11,7 @@ export default {
       surface: {
         1: "#eff8ff",
       },
+      grey: "#7a7a7a",
       white: "#FFF",
       green: "#38862a",
       blue: {

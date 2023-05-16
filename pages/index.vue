@@ -1,13 +1,11 @@
 <script setup lang="ts">
-useHead({
+useServerSeoMeta({
   title: "Cutu - URL shortener",
+  description:
+    "CutU: Simplify your URLs effortlessly. Transform long, complex web addresses into short, shareable links with our user-friendly interface. Perfect for social media, emails, and any situation that demands concise URLs. Streamline your online presence with CutU today!",
 });
 </script>
 
 <template>
-  <main>
-    <div class="mx-auto max-w-[640px] flex-shrink px-4 pt-8 lg:max-w-[920px]">
-      <URLShortener />
-    </div>
-  </main>
+  <URLShortener />
 </template>
