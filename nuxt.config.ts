@@ -13,4 +13,11 @@ export default defineNuxtConfig({
     },
   },
   modules: ["@vueuse/nuxt", "@nuxtjs/tailwindcss"],
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        moduleResolution: "bundler",
+      },
+    },
+  },
 });
