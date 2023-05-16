@@ -38,7 +38,7 @@ async function shortenURL() {
   try {
     const newShortLink: NewShortLink = {
       initialURL: url.value,
-      dateCreated: new Date().toString(),
+      dateCreated: new Date().toISOString(),
     };
 
     const shortLink = await $fetch<ShortLink>("/urls", {
@@ -73,7 +73,7 @@ async function shortenURL() {
         />
       </label>
       <button
-        class="rounded-md bg-blue-600 py-2 text-white transition-colors hover:bg-blue-500"
+        class="rounded-md bg-blue-500 py-2 text-white transition-colors hover:bg-blue-600 active:bg-blue-700"
         type="submit"
       >
         Shorten
