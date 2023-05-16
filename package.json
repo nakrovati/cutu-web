@@ -22,15 +22,15 @@
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "@nuxtjs/tailwindcss": "^6.6.8",
+    "@nuxtjs/tailwindcss": "^6.7.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "nuxt": "^3.4.3",
+    "nuxt": "^3.5.0",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
     "typescript": "^5.0.4"
   }
 }
