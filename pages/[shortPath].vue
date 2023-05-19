@@ -5,9 +5,6 @@ useServerSeoMeta({
 });
 
 definePageMeta({
-  // validate: (route) => {
-  //   return /^\w{7}$/.test(route.params.shortPath.toString());
-  // },
   middleware: "check-short-url",
 });
 
