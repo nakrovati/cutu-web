@@ -14,7 +14,7 @@ const sortedShortLinksByDate = computed(() =>
 <template>
   <ul
     v-if="shortLinks.length"
-    class="mt-8 flex flex-col gap-4 rounded-lg bg-surface-1 p-4"
+    class="mt-8 flex flex-col gap-4 rounded-lg bg-surface-1 p-4 dark:bg-surface-dark-2"
   >
     <URLShortenerListItem
       v-for="shortLink in sortedShortLinksByDate"

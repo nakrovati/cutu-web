@@ -66,7 +66,7 @@ async function shortenURL() {
           aria-describedby="url-error"
           type="text"
           name="url"
-          class="w-full rounded-md border-2 border-blue-500 px-4 py-2"
+          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 dark:border-surface-dark-2 dark:bg-surface-dark-2"
           placeholder="Shorten your link"
           aria-label="Enter the URL you want to shorten"
           @focus="resetValidation"
@@ -83,7 +83,7 @@ async function shortenURL() {
       <span
         v-show="!isValid"
         id="url-error"
-        class="rounded-md bg-red-500 py-2 text-center text-white"
+        class="rounded-md bg-red-600 py-2 text-center text-white dark:bg-red-500"
         >{{ errorMessage }}</span
       >
     </Transition>

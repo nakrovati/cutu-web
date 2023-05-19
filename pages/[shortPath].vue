@@ -23,18 +23,18 @@ const convertedDateCreated = computed(() => {
 <template>
   <main class="mt-8">
     <div class="mx-auto grid w-full gap-4 px-4 md:w-[640px] lg:w-[920px]">
-      <div class="text-grey">{{ convertedDateCreated }}</div>
+      <div class="text-grey dark:text-blue-500">{{ convertedDateCreated }}</div>
       <div
         class="flex items-center rounded-lg border-2 border-blue-500 px-2 py-4"
       >
-        <PhLinkSimple class="mr-2 h-5 w-5 sm:h-6 sm:w-6" /><a
+        <PhLinkSimple class="mr-2 h-5 w-5 dark:text-white sm:h-6 sm:w-6" /><a
           :href="shortLink.initialURL"
-          class="sm:text-xl"
+          class="dark:text-white sm:text-xl"
           >{{ shortLink.shortURL }}</a
         >
       </div>
 
-      <div class="max-h-8 truncate">
+      <div class="max-h-8 truncate dark:text-white">
         <strong>Description:</strong> {{ shortLink.initialURL }}
       </div>
     </div>
