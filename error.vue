@@ -1,8 +1,8 @@
 <template>
   <NuxtLayout>
     <div class="flex flex-col items-center gap-y-8">
-      <h1 class="text-4xl dark:text-white">Whoops!</h1>
-      <p class="dark:text-white">
+      <h1 class="text-4xl dark:text-white-dark">Whoops!</h1>
+      <p class="dark:text-white-dark">
         The page you are looking for could not be found.
       </p>
       <NuxtLink

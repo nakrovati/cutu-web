@@ -27,14 +27,16 @@ const convertedDateCreated = computed(() => {
       <div
         class="flex items-center rounded-lg border-2 border-blue-500 px-2 py-4"
       >
-        <PhLinkSimple class="mr-2 h-5 w-5 dark:text-white sm:h-6 sm:w-6" /><a
+        <PhLinkSimple
+          class="mr-2 h-5 w-5 dark:text-white-dark sm:h-6 sm:w-6"
+        /><a
           :href="shortLink.initialURL"
-          class="dark:text-white sm:text-xl"
+          class="dark:text-white-dark sm:text-xl"
           >{{ shortLink.shortURL }}</a
         >
       </div>
 
-      <div class="max-h-8 truncate dark:text-white">
+      <div class="max-h-8 truncate dark:text-white-dark">
         <strong>Description:</strong> {{ shortLink.initialURL }}
       </div>
     </div>

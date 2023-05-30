@@ -66,14 +66,14 @@ async function shortenURL() {
           aria-describedby="url-error"
           type="text"
           name="url"
-          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 dark:border-surface-dark-2 dark:bg-surface-dark-2 dark:text-white"
+          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 dark:border-surface-dark-2 dark:bg-surface-dark-2 dark:text-white-dark"
           placeholder="Shorten your link"
           aria-label="Enter the URL you want to shorten"
           @focus="resetValidation"
         />
       </label>
       <button
-        class="rounded-md bg-blue-500 py-2 text-white transition-colors hover:bg-blue-600 active:bg-blue-700"
+        class="rounded-md bg-blue-500 py-2 text-white transition-colors hover:bg-blue-600 active:bg-blue-700 dark:text-white-dark"
         type="submit"
       >
         Shorten

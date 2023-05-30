@@ -18,7 +18,7 @@ async function copyShortURL(shortURL: string) {
 
 <template>
   <li class="grid lg:grid-cols-2 lg:grid-rows-none lg:items-center lg:gap-4">
-    <span class="truncate dark:text-white">{{ initialURL }}</span>
+    <span class="truncate dark:text-white-dark">{{ initialURL }}</span>
     <span
       class="grid grid-rows-[auto_auto] gap-1 text-blue-600 dark:text-blue-500 lg:flex lg:items-center lg:justify-end lg:gap-4"
     >
