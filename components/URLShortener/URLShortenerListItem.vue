@@ -28,7 +28,7 @@ async function copyShortURL(shortURL: string) {
         :class="[
           isCopied
             ? 'bg-green text-white'
-            : 'bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-dark-200 dark:text-dark',
+            : 'bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-dark-200 dark:text-black',
         ]"
         class="rounded-lg px-4 py-2 transition-colors lg:w-24"
         @click="copyShortURL(shortURL)"

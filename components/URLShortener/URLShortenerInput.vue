@@ -66,7 +66,7 @@ async function shortenURL() {
           aria-describedby="url-error"
           type="text"
           name="url"
-          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 dark:border-surface-dark-2 dark:bg-surface-dark-2"
+          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 dark:border-surface-dark-2 dark:bg-surface-dark-2 dark:text-white"
           placeholder="Shorten your link"
           aria-label="Enter the URL you want to shorten"
           @focus="resetValidation"

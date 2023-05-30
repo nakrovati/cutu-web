@@ -6,6 +6,7 @@ export default {
     "layouts/**/*.vue",
     "pages/**/*.vue",
     "app.vue",
+    "error.vue",
   ],
   theme: {
     colors: {
@@ -18,7 +19,7 @@ export default {
       },
       grey: "#7a7a7a",
       white: "#fff",
-      dark: "#000",
+      black: "#000",
       green: "#38862a",
       blue: {
         100: "#daecff",
