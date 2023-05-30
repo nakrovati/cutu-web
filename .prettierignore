@@ -3,8 +3,11 @@ node_modules/
 pnpm-lock.yaml
 
 # Nuxt dev/build outputs
-.output
 .nuxt
+.nitro
+.cache
+.output
+dist
 
 # Coverage
 coverage

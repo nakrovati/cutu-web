@@ -2,8 +2,11 @@
 node_modules/
 
 # Nuxt dev/build outputs
-.output
 .nuxt
+.nitro
+.cache
+.output
+dist
 
 # Coverage directory
 coverage
