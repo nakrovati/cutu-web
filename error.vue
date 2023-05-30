@@ -14,6 +14,10 @@
   </NuxtLayout>
 </template>
 
-<script setup lang="ts">
+<script setup>
+useServerSeoMeta({
+  title: "Cutu | Page Not Found | 404",
+});
+
 useDark();
 </script>
