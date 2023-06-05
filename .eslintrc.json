@@ -7,5 +7,17 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "extends": ["@nuxtjs/eslint-config-typescript", "prettier"]
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.vue"],
+      "extends": ["@nuxtjs/eslint-config-typescript", "prettier"]
+    }
+  ]
 }
