@@ -1,5 +1,4 @@
 import { useStorage } from "@vueuse/core";
-import { useState } from "#app";
 
 export const useShortLinks = () => {
   const shortLinksStorage = useStorage<ShortLink[]>("short-links", []);
