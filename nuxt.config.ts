@@ -12,6 +12,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
   modules: ["@vueuse/nuxt", "@nuxtjs/tailwindcss"],
   typescript: {
     tsConfig: {
