@@ -16,7 +16,7 @@ export default defineNuxtRouteMiddleware(async (_to, from) => {
       `/urls/${shortPath.substring(0, 7)}`,
       {
         baseURL: backendURL,
-      }
+      },
     );
 
     if (!response) {

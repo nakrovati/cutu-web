@@ -7,7 +7,7 @@ function compareDatesDesc(a: ShortLink, b: ShortLink) {
 const shortLinks = useShortLinks();
 
 const sortedShortLinksByDate = computed(() =>
-  shortLinks.value.slice().sort(compareDatesDesc)
+  shortLinks.value.slice().sort(compareDatesDesc),
 );
 </script>
 
