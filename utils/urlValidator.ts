@@ -1,10 +1,10 @@
-import { z } from "zod";
+import { parse, string, url } from "valibot";
+
+const URLSchema = string([url()]);
 
 export function isValidURL(url: string) {
-  const urlSchema = z.string().url();
-
   try {
-    urlSchema.parse(url);
+    parse(URLSchema, url);
 
     return true;
   } catch (error) {
