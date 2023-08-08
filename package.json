@@ -23,13 +23,13 @@
     "@vueuse/nuxt": "^10.3.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.46.0",
-    "eslint-config-prettier": "^8.9.0",
+    "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "nuxt": "^3.6.5",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "typescript": "^5.1.6",
-    "valibot": "^0.8.0"
+    "valibot": "^0.11.1"
   }
 }
