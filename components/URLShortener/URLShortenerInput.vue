@@ -64,9 +64,7 @@ function resetValidation() {
     class="grid grid-rows-[auto] gap-2"
     @submit.prevent="handleCreateShortURL"
   >
-    <div
-      class="row-start-1 row-end-2 grid gap-2 lg:grid-cols-[auto_20%] lg:gap-8"
-    >
+    <div class="grid gap-2 sm:grid-cols-[1fr_auto] sm:grid-rows-none sm:gap-8">
       <label>
         <input
           v-model="url"
@@ -74,15 +72,15 @@ function resetValidation() {
           type="text"
           name="url"
           autocomplete="off"
-          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 dark:border-surface-dark-2 dark:bg-surface-dark-2 dark:text-white-dark"
+          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 dark:border-surface-dark-2 dark:bg-surface-dark-2 dark:text-white-dark sm:w-full"
           placeholder="Shorten your link"
-          aria-label="Enter the URL you want to shorten"
+          aria-label="Paste here the URL you want to shorten"
           @focus="resetValidation"
         />
       </label>
       <button
         :disabled="isLoading"
-        class="rounded-md bg-blue-500 py-2 text-white transition-colors hover:bg-blue-600 active:bg-blue-700 dark:text-white-dark"
+        class="rounded-md bg-blue-500 px-8 py-2 text-white transition-colors hover:bg-blue-600 active:bg-blue-700 dark:text-white-dark"
         type="submit"
         aria-label="Shorten"
       >
