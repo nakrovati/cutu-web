@@ -7,11 +7,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  postcss: {
-    plugins: {
-      autoprefixer: {},
-    },
-  },
   modules: ["@vueuse/nuxt", "@nuxtjs/tailwindcss"],
   typescript: {
     tsConfig: {
