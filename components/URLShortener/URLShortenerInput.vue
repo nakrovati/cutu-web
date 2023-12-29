@@ -72,7 +72,7 @@ function resetValidation() {
           type="text"
           name="url"
           autocomplete="off"
-          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 dark:border-surface-dark-2 dark:bg-surface-dark-2 dark:text-white-dark sm:w-full"
+          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 dark:bg-slate-700 dark:text-white sm:w-full"
           placeholder="Shorten your link"
           aria-label="Paste here the URL you want to shorten"
           @focus="resetValidation"
@@ -80,13 +80,13 @@ function resetValidation() {
       </label>
       <button
         :disabled="isLoading"
-        class="rounded-md bg-blue-500 px-8 py-2 text-white transition-colors hover:bg-blue-600 active:bg-blue-700 dark:text-white-dark"
+        class="rounded-md bg-blue-500 px-8 py-2 text-white transition-colors hover:bg-blue-600 active:bg-blue-700"
         type="submit"
         aria-label="Shorten"
       >
         <span v-if="isLoading">
           <PhArrowsClockwise
-            class="mx-auto h-auto w-6 animate-spin dark:text-white-dark"
+            class="mx-auto h-auto w-6 animate-spin"
           ></PhArrowsClockwise
         ></span>
         <span v-else>Shorten</span>

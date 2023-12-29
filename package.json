@@ -17,6 +17,7 @@
     "prepare": "husky install || exit 0"
   },
   "devDependencies": {
+    "@nuxtjs/color-mode": "^3.3.2",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/tailwindcss": "^6.10.1",
     "@vercel/analytics": "^1.1.1",

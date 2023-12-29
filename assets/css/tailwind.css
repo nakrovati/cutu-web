@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply dark:bg-surface-dark-1;
+    @apply dark:bg-slate-800;
   }
 }
