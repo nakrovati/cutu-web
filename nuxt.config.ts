@@ -11,13 +11,6 @@ export default defineNuxtConfig({
     },
   },
   modules: ["@vueuse/nuxt", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        moduleResolution: "bundler",
-      },
-    },
-  },
   colorMode: {
     classSuffix: "",
   },
