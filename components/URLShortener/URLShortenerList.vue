@@ -1,13 +1,10 @@
 <script setup lang="ts">
-/** Compares dates from new to old */
-function compareDatesDesc(a: ShortLink, b: ShortLink) {
-  return new Date(b.dateCreated).getTime() - new Date(a.dateCreated).getTime();
-}
-
 const shortLinks = useShortLinksStorage();
 
 const sortedShortLinksByDate = computed(() =>
-  shortLinks.value.slice().sort(compareDatesDesc),
+  shortLinks.value
+    .slice()
+    .sort((a, b) => compareDates(a.dateCreated, b.dateCreated, "desc")),
 );
 </script>
 
