@@ -1,1 +1,1 @@
-export const useShortLink = () => useState<ShortLink>("short-links");
+export const useShortLink = () => useState<ShortLink>("short-link");

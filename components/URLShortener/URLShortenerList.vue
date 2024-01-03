@@ -4,7 +4,7 @@ function compareDatesDesc(a: ShortLink, b: ShortLink) {
   return new Date(b.dateCreated).getTime() - new Date(a.dateCreated).getTime();
 }
 
-const shortLinks = useShortLinks();
+const shortLinks = useShortLinksStorage();
 
 const sortedShortLinksByDate = computed(() =>
   shortLinks.value.slice().sort(compareDatesDesc),
@@ -18,9 +18,9 @@ const sortedShortLinksByDate = computed(() =>
   >
     <URLShortenerListItem
       v-for="shortLink in sortedShortLinksByDate"
-      :key="shortLink.shortURL"
-      :short-u-r-l="shortLink.shortURL"
-      :initial-u-r-l="shortLink.initialURL"
+      :key="shortLink.shortUrl"
+      :short-url="shortLink.shortUrl"
+      :initial-url="shortLink.initialUrl"
       :date-created="shortLink.dateCreated"
     ></URLShortenerListItem>
   </ul>

@@ -7,7 +7,7 @@ const url = ref("");
 const isLoading = ref(false);
 const showErrorMessage = ref(false);
 const errorMessage = ref("");
-const shortLinks = useShortLinks();
+const shortLinks = useShortLinksStorage();
 let errorTimer: NodeJS.Timeout;
 
 function startErrorTimer(ms = 10_000) {
@@ -31,7 +31,7 @@ function handleCreateShortURL() {
 async function shortenURL() {
   isLoading.value = true;
   const newShortLink: NewShortLink = {
-    initialURL: url.value,
+    initialUrl: url.value,
     dateCreated: new Date().toISOString(),
   };
 
@@ -72,7 +72,7 @@ function resetValidation() {
           type="text"
           name="url"
           autocomplete="off"
-          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 dark:bg-slate-700 dark:text-white sm:w-full"
+          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 sm:w-full dark:bg-slate-700 dark:text-white"
           placeholder="Shorten your link"
           aria-label="Paste here the URL you want to shorten"
           @focus="resetValidation"

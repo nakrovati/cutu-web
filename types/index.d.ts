@@ -1,7 +1,7 @@
 declare interface ShortLink {
-  shortURL: string;
-  initialURL: string;
+  shortUrl: string;
+  initialUrl: string;
   dateCreated: string;
 }
 
-declare type NewShortLink = Pick<ShortLink, "initialURL" | "dateCreated">;
+declare type NewShortLink = Pick<ShortLink, "initialUrl" | "dateCreated">;

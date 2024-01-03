@@ -3,8 +3,8 @@ import PhLinkSimple from "assets/icons/PhLinkSimple.vue";
 
 const shortLink = useShortLink();
 
-const title = `Cutu - ${shortLink.value.shortURL}`;
-const description = `Data about the short link https://cutu.dev ${shortLink.value.shortURL}`;
+const title = `Cutu - ${shortLink.value.shortUrl}`;
+const description = `Data about the short link https://cutu.dev ${shortLink.value.shortUrl}`;
 
 useServerSeoMeta({
   title,
@@ -31,15 +31,15 @@ const convertedDateCreated = computed(() => {
     <div
       class="flex items-center rounded-lg border-2 border-blue-500 px-2 py-4"
     >
-      <PhLinkSimple class="mr-2 h-5 w-5 sm:h-6 sm:w-6" /><a
-        :href="shortLink.initialURL"
-        class="dark:text-white sm:text-xl"
-        >{{ shortLink.shortURL }}</a
+      <PhLinkSimple class="mr-2 h-5 w-5 sm:h-6 sm:w-6 dark:text-white" /><a
+        :href="shortLink.initialUrl"
+        class="sm:text-xl dark:text-white"
+        >{{ shortLink.shortUrl }}</a
       >
     </div>
 
     <div class="max-h-8 truncate dark:text-white">
-      <strong>Description:</strong> {{ shortLink.initialURL }}
+      <strong>Description:</strong> {{ shortLink.initialUrl }}
     </div>
   </div>
 </template>
