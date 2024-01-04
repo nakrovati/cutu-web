@@ -60,47 +60,56 @@ function resetValidation() {
 </script>
 
 <template>
-  <form
-    class="grid grid-rows-[auto] gap-2"
-    @submit.prevent="handleCreateShortURL"
-  >
-    <div class="grid gap-2 sm:grid-cols-[1fr_auto] sm:grid-rows-none sm:gap-8">
-      <label>
-        <input
-          v-model="url"
-          aria-describedby="url-error"
-          type="text"
-          name="url"
-          autocomplete="off"
-          class="w-full rounded-md border-2 border-blue-500 px-4 py-2 sm:w-full dark:bg-slate-700 dark:text-white"
-          placeholder="Shorten your link"
-          aria-label="Paste here the URL you want to shorten"
-          @focus="resetValidation"
-        />
-      </label>
-      <button
-        :disabled="isLoading"
-        class="rounded-md bg-blue-500 px-8 py-2 text-white transition-colors hover:bg-blue-600 active:bg-blue-700"
-        type="submit"
-        aria-label="Shorten"
+  <div>
+    <section class="mb-2 dark:text-white">
+      <h1 class="mb-8 text-4xl font-bold sm:text-5xl">Shorten your URL</h1>
+      <p>Type the URL you want to shorten in the field below</p>
+    </section>
+
+    <form
+      class="grid grid-rows-[auto] gap-2"
+      @submit.prevent="handleCreateShortURL"
+    >
+      <div
+        class="grid gap-2 sm:grid-cols-[1fr_auto] sm:grid-rows-none sm:gap-8"
       >
-        <span v-if="isLoading">
-          <PhArrowsClockwise
-            class="mx-auto h-auto w-6 animate-spin"
-          ></PhArrowsClockwise
-        ></span>
-        <span v-else>Shorten</span>
-      </button>
-    </div>
-    <Transition name="fade">
-      <span
-        v-if="showErrorMessage"
-        id="url-error"
-        class="rounded-md bg-red-600 py-2 text-center text-white dark:bg-red-500"
-        >{{ errorMessage }}</span
-      >
-    </Transition>
-  </form>
+        <label>
+          <input
+            v-model="url"
+            aria-describedby="url-error"
+            type="text"
+            name="url"
+            autocomplete="off"
+            class="w-full rounded-md border-2 border-blue-500 px-4 py-2 sm:w-full dark:bg-slate-700 dark:text-white"
+            placeholder="Shorten your link"
+            aria-label="Paste here the URL you want to shorten"
+            @focus="resetValidation"
+          />
+        </label>
+        <button
+          :disabled="isLoading"
+          class="rounded-md bg-blue-500 px-8 py-2 text-white transition-colors hover:bg-blue-600 active:bg-blue-700"
+          type="submit"
+          aria-label="Shorten"
+        >
+          <span v-if="isLoading">
+            <PhArrowsClockwise
+              class="mx-auto h-auto w-6 animate-spin"
+            ></PhArrowsClockwise
+          ></span>
+          <span v-else>Shorten</span>
+        </button>
+      </div>
+      <Transition name="fade">
+        <span
+          v-if="showErrorMessage"
+          id="url-error"
+          class="rounded-md bg-red-600 py-2 text-center text-white dark:bg-red-500"
+          >{{ errorMessage }}</span
+        >
+      </Transition>
+    </form>
+  </div>
 </template>
 
 <style scoped>

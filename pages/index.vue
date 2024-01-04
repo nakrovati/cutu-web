@@ -7,5 +7,8 @@ useServerSeoMeta({
 </script>
 
 <template>
-  <URLShortener />
+  <div>
+    <UrlForm></UrlForm>
+    <UrlList></UrlList>
+  </div>
 </template>
