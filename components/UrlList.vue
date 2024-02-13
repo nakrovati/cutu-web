@@ -16,9 +16,7 @@ const sortedShortenedUrlsByDate = computed(() =>
     <UrlListItem
       v-for="shortenedUrl in sortedShortenedUrlsByDate"
       :key="shortenedUrl.shortUrl"
-      :short-url="shortenedUrl.shortUrl"
-      :original-url="shortenedUrl.originalUrl"
-      :created-at="shortenedUrl.createdAt"
+      :shortened-url="shortenedUrl"
     ></UrlListItem>
   </ul>
 </template>
