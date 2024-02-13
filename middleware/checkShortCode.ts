@@ -1,5 +1,5 @@
 export default defineNuxtRouteMiddleware(async (_to, from) => {
-  if (process.client) return;
+  if (process.server) return;
 
   const shortPath = from.params.shortPath.toString();
   const shortPathRegex = /^\w{7}[+]?$/;
@@ -9,10 +9,10 @@ export default defineNuxtRouteMiddleware(async (_to, from) => {
   }
 
   const { backendURL } = useRuntimeConfig().public;
-  const shortLink = useShortLink();
+  const shortenedUrl = useShortenedUrl();
 
   try {
-    const response = await $fetch<ShortLink>(
+    const response = await $fetch<ShortenedUrl>(
       `/urls/${shortPath.substring(0, 7)}`,
       {
         baseURL: backendURL,
@@ -23,7 +23,7 @@ export default defineNuxtRouteMiddleware(async (_to, from) => {
       return abortNavigation();
     }
 
-    shortLink.value = response;
+    shortenedUrl.value = response;
   } catch (error) {
     return abortNavigation();
   }

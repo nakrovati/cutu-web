@@ -7,7 +7,7 @@ const url = ref("");
 const isLoading = ref(false);
 const showErrorMessage = ref(false);
 const errorMessage = ref("");
-const shortLinks = useShortLinksStorage();
+const shortenedUrls = useShortenedUrlsStorage();
 let errorTimer: NodeJS.Timeout;
 
 function startErrorTimer(ms = 10_000) {
@@ -30,20 +30,18 @@ function handleCreateShortURL() {
 
 async function shortenURL() {
   isLoading.value = true;
-  const newShortLink: NewShortLink = {
-    initialUrl: url.value,
-    dateCreated: new Date().toISOString(),
-  };
 
   try {
-    const shortLink = await $fetch<ShortLink>("/urls", {
+    const shortenedUrl = await $fetch<ShortenedUrl>("/urls", {
       method: "POST",
       baseURL: backendURL,
-      body: newShortLink,
+      body: {
+        originalUrl: url.value,
+      },
       responseType: "json",
     });
 
-    shortLinks.value.push(shortLink);
+    shortenedUrls.value.push(shortenedUrl);
   } catch (error) {
     errorMessage.value = "An error occurred. Please try again later.";
     showErrorMessage.value = true;

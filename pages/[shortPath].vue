@@ -1,45 +1,41 @@
 <script setup lang="ts">
 import PhLinkSimple from "assets/icons/PhLinkSimple.vue";
 
-const shortLink = useShortLink();
-
-const title = `Cutu - ${shortLink.value.shortUrl}`;
-const description = `Data about the short link https://cutu.dev ${shortLink.value.shortUrl}`;
+const shortenedUrl = useShortenedUrl();
 
 useServerSeoMeta({
-  title,
-  description,
+  title: `Cutu - ${shortenedUrl.value.shortUrl}`,
+  description: `Data about the short link https://cutu.dev ${shortenedUrl.value.shortUrl}`,
 });
 
 definePageMeta({
-  middleware: "check-short-url",
+  middleware: "check-short-code",
 });
 
-const convertedDateCreated = computed(() => {
-  const dateCreated = new Date(shortLink.value.dateCreated);
-
-  return new Intl.DateTimeFormat(undefined, {
-    dateStyle: "full",
-    timeStyle: "full",
-  }).format(dateCreated);
-});
+const createdAt = new Date(shortenedUrl.value.createdAt);
+const convertedUrlCreationDate = new Intl.DateTimeFormat(undefined, {
+  dateStyle: "full",
+  timeStyle: "full",
+}).format(createdAt);
 </script>
 
 <template>
   <div class="grid w-full gap-4">
-    <div class="text-grey dark:text-blue-500">{{ convertedDateCreated }}</div>
+    <div class="text-grey dark:text-blue-500">
+      {{ convertedUrlCreationDate }}
+    </div>
     <div
       class="flex items-center rounded-lg border-2 border-blue-500 px-2 py-4"
     >
       <PhLinkSimple class="mr-2 h-5 w-5 sm:h-6 sm:w-6 dark:text-white" /><a
-        :href="shortLink.initialUrl"
+        :href="shortenedUrl.originalUrl"
         class="sm:text-xl dark:text-white"
-        >{{ shortLink.shortUrl }}</a
+        >{{ shortenedUrl.shortUrl }}</a
       >
     </div>
 
     <div class="max-h-8 truncate dark:text-white">
-      <strong>Description:</strong> {{ shortLink.initialUrl }}
+      <strong>Description:</strong> {{ shortenedUrl.originalUrl }}
     </div>
   </div>
 </template>

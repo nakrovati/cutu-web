@@ -1,9 +1,5 @@
 <script setup lang="ts">
-interface Props {
-  shortUrl: string;
-  initialUrl: string;
-  dateCreated: string;
-}
+interface Props extends ShortenedUrl {}
 
 const isCopied = ref(false);
 
@@ -18,11 +14,11 @@ async function copyShortURL(shortUrl: string) {
 
 <template>
   <li class="grid lg:grid-cols-2 lg:grid-rows-none lg:items-center lg:gap-4">
-    <span class="truncate dark:text-white">{{ initialUrl }}</span>
+    <span class="truncate dark:text-white">{{ originalUrl }}</span>
     <span
       class="grid grid-rows-[auto_auto] gap-1 text-blue-600 lg:flex lg:items-center lg:justify-end lg:gap-4 dark:text-blue-500"
     >
-      <a :href="initialUrl">{{ shortUrl }}</a>
+      <a :href="originalUrl">{{ shortUrl }}</a>
       <button
         type="button"
         :class="[

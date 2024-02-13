@@ -1,24 +1,24 @@
 <script setup lang="ts">
-const shortLinks = useShortLinksStorage();
+const shortenedUrls = useShortenedUrlsStorage();
 
-const sortedShortLinksByDate = computed(() =>
-  shortLinks.value
+const sortedShortenedUrlsByDate = computed(() =>
+  shortenedUrls.value
     .slice()
-    .sort((a, b) => compareDates(a.dateCreated, b.dateCreated, "desc")),
+    .sort((a, b) => compareDates(a.createdAt, b.createdAt, "desc")),
 );
 </script>
 
 <template>
   <ul
-    v-if="shortLinks.length"
+    v-if="shortenedUrls.length"
     class="mt-8 flex flex-col gap-4 rounded-lg bg-blue-50 p-4 dark:bg-slate-700"
   >
     <UrlListItem
-      v-for="shortLink in sortedShortLinksByDate"
-      :key="shortLink.shortUrl"
-      :short-url="shortLink.shortUrl"
-      :initial-url="shortLink.initialUrl"
-      :date-created="shortLink.dateCreated"
+      v-for="shortenedUrl in sortedShortenedUrlsByDate"
+      :key="shortenedUrl.shortUrl"
+      :short-url="shortenedUrl.shortUrl"
+      :original-url="shortenedUrl.originalUrl"
+      :created-at="shortenedUrl.createdAt"
     ></UrlListItem>
   </ul>
 </template>
