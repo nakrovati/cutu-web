@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import PhCopy from "~/assets/icons/PhCopy.vue";
+
 interface Props {
   shortenedUrl: ShortenedUrl;
 }
@@ -15,24 +17,28 @@ async function copyShortURL(shortUrl: string) {
 </script>
 
 <template>
-  <li class="grid lg:grid-cols-2 lg:grid-rows-none lg:items-center lg:gap-4">
-    <span class="truncate dark:text-white">{{ shortenedUrl.originalUrl }}</span>
-    <span
-      class="grid grid-rows-[auto_auto] gap-1 text-blue-600 dark:text-blue-500 lg:flex lg:items-center lg:justify-end lg:gap-4"
-    >
-      <a :href="shortenedUrl.originalUrl">{{ shortenedUrl.shortUrl }}</a>
+  <li class="grid grid-cols-[auto_auto] gap-4 sm:items-center">
+    <div class="grid grid-rows-2 sm:grid-cols-2 sm:grid-rows-none">
+      <div class="truncate dark:text-white">
+        {{ shortenedUrl.originalUrl }}
+      </div>
+      <a
+        class="w-fit text-blue-600 dark:text-blue-500 sm:ml-auto"
+        :href="shortenedUrl.originalUrl"
+        >{{ shortenedUrl.shortUrl }}</a
+      >
+    </div>
+    <div class="grid items-start sm:grid-cols-2">
       <button
         type="button"
-        :class="[
-          isCopied
-            ? 'bg-green-700 text-white'
-            : 'bg-blue-100 text-blue-800 hover:bg-blue-200 dark:to-blue-200 dark:text-black',
-        ]"
-        class="rounded-lg px-4 py-2 transition-colors lg:w-24"
+        class="p-1"
         @click="copyShortURL(shortenedUrl.shortUrl)"
       >
-        {{ isCopied ? "Copied!" : "Copy" }}
+        <PhCopy
+          class="h-auto w-6 dark:text-white"
+          :class="[isCopied ? 'text-green-500' : '']"
+        ></PhCopy>
       </button>
-    </span>
+    </div>
   </li>
 </template>
