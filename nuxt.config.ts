@@ -10,7 +10,12 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ["@vueuse/nuxt", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
+  modules: [
+    "radix-vue/nuxt",
+    "@vueuse/nuxt",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
+  ],
   colorMode: {
     classSuffix: "",
   },
