@@ -2,13 +2,8 @@
 import PhCopy from "~/assets/icons/PhCopy.vue";
 import PhQrCode from "~/assets/icons/PhQrCode.vue";
 import { useQRCode } from "@vueuse/integrations/useQRCode";
-import { useShare } from "#imports";
 
-interface Props {
-  shortenedUrl: ShortenedUrl;
-}
-
-const props = defineProps<Props>();
+const props = defineProps<{ shortenedUrl: ShortenedUrl }>();
 
 const isCopied = ref(false);
 const qrcode = useQRCode(props.shortenedUrl.shortUrl);
@@ -19,11 +14,18 @@ async function copyShortURL(shortUrl: string) {
   setTimeout(() => (isCopied.value = false), 1_000);
 }
 
+const shortUrlWithoutProtocol = computed(() => {
+  const url = new URL(props.shortenedUrl.shortUrl);
+  return url.host + url.pathname;
+});
+
 const { share } = useShare();
 
 function shareQRCode() {
   share({
     title: props.shortenedUrl.shortUrl,
+    text: `Shortened URL: ${props.shortenedUrl.shortUrl}`,
+    url: props.shortenedUrl.shortUrl,
   });
 }
 </script>
@@ -37,13 +39,13 @@ function shareQRCode() {
       <a
         class="w-fit text-blue-600 dark:text-blue-500 sm:ml-auto"
         :href="shortenedUrl.originalUrl"
-        >{{ shortenedUrl.shortUrl }}</a
+        >{{ shortUrlWithoutProtocol }}</a
       >
     </div>
     <div class="grid items-start sm:grid-cols-2">
       <BaseDialog :title="shortenedUrl.shortUrl">
         <template #trigger>
-          <button class="p-1" name="trigger" type="button">
+          <button class="p-1">
             <PhQrCode class="h-auto w-6 dark:text-white"></PhQrCode>
           </button>
         </template>

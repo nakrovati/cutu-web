@@ -11,7 +11,7 @@ defineProps({
 
 <template>
   <DialogRoot>
-    <DialogTrigger><slot name="trigger"></slot></DialogTrigger>
+    <DialogTrigger as-child><slot name="trigger"></slot></DialogTrigger>
     <DialogPortal>
       <DialogOverlay
         class="fixed inset-0 z-30 bg-black/50 data-[state=open]:animate-overlayShow"
