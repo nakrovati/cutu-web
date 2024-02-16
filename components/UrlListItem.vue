@@ -51,13 +51,7 @@ function shareQRCode() {
         </template>
 
         <img :src="qrcode" alt="QR code" />
-        <button
-          type="button"
-          class="rounded-md bg-blue-500 px-6 py-2 text-white transition-colors hover:bg-blue-600 active:bg-blue-700"
-          @click="shareQRCode"
-        >
-          Share
-        </button>
+        <BaseButton type="button" @click="shareQRCode">Share</BaseButton>
       </BaseDialog>
       <button
         type="button"

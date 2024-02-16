@@ -84,19 +84,14 @@ function resetValidation() {
             @focus="resetValidation"
           />
         </label>
-        <button
-          :disabled="isLoading"
-          class="rounded-md bg-blue-500 px-8 py-2 text-white transition-colors hover:bg-blue-600 active:bg-blue-700"
-          type="submit"
-          aria-label="Shorten"
-        >
+        <BaseButton :disabled="isLoading" type="submit" aria-label="Shorten">
           <span v-if="isLoading">
             <PhArrowsClockwise
               class="mx-auto h-auto w-6 animate-spin"
             ></PhArrowsClockwise
           ></span>
           <span v-else>Shorten</span>
-        </button>
+        </BaseButton>
       </div>
       <Transition name="fade">
         <span
