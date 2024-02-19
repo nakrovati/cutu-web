@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import PhCopy from "~/assets/icons/PhCopy.vue";
-import PhQrCode from "~/assets/icons/PhQrCode.vue";
+import { PhCopy, PhQrCode } from "~/assets/icons";
 import { useQRCode } from "@vueuse/integrations/useQRCode";
 
 const props = defineProps<{ shortenedUrl: ShortenedUrl }>();

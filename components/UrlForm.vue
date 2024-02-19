@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PhArrowsClockwise from "~/assets/icons/PhArrowsClockwise.vue";
+import { PhArrowsClockwise } from "~/assets/icons";
 
 const { backendURL } = useRuntimeConfig().public;
 

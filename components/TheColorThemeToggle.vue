@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import PhMoon from "~/assets/icons/PhMoon.vue";
-import PhSun from "~/assets/icons/PhSun.vue";
+import { PhMoon, PhSun } from "~/assets/icons";
 
 const colorMode = useColorMode();
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PhLinkSimple from "assets/icons/PhLinkSimple.vue";
+import { PhLinkSimple } from "assets/icons";
 
 const shortenedUrl = useShortenedUrl();
 
@@ -27,9 +27,9 @@ const convertedUrlCreationDate = new Intl.DateTimeFormat(undefined, {
     <div
       class="flex items-center rounded-lg border-2 border-blue-500 px-2 py-4"
     >
-      <PhLinkSimple class="mr-2 h-5 w-5 sm:h-6 sm:w-6 dark:text-white" /><a
+      <PhLinkSimple class="mr-2 h-5 w-5 dark:text-white sm:h-6 sm:w-6" /><a
         :href="shortenedUrl.originalUrl"
-        class="sm:text-xl dark:text-white"
+        class="dark:text-white sm:text-xl"
         >{{ shortenedUrl.shortUrl }}</a
       >
     </div>

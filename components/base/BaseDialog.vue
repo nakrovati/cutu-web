@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PhX from "~/assets/icons/PhX.vue";
+import { PhX } from "~/assets/icons";
 
 defineProps({
   title: {
