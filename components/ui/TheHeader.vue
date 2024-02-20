@@ -8,6 +8,7 @@ const route = useRoute();
       <NuxtLink
         v-if="route.path !== '/'"
         class="text-xl font-bold dark:text-white"
+        to="/"
         >Cutu</NuxtLink
       >
       <div v-else class="text-xl font-bold dark:text-white">Cutu</div>
