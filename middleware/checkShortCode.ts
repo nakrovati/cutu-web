@@ -1,5 +1,5 @@
 export default defineNuxtRouteMiddleware(async (_to, from) => {
-  if (process.server) return;
+  if (process.client) return;
 
   const shortPath = from.params.shortPath.toString();
   const shortPathRegex = /^\w{7}[+]?$/;
